@@ -1,4 +1,4 @@
-; Wed Oct 12 10:40:11 GMT+01:00 2016
+; Wed Oct 12 10:56:10 GMT+01:00 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -15,13 +15,8 @@
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot relation_apears
-		(type INSTANCE)
-;+		(allowed-classes Relations)
-;+		(inverse-slot act_relation)
-		(create-accessor read-write))
 	(single-slot actNum
-		(type INTEGER)
+		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot description
@@ -33,20 +28,20 @@
 ;+		(allowed-classes Persons)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
-	(multislot person_apears
-		(type INSTANCE)
-;+		(allowed-classes Persons)
-;+		(inverse-slot act_person)
-		(create-accessor read-write))
 	(single-slot active
 		(type INSTANCE)
 ;+		(allowed-classes Persons)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot event_apears
+	(multislot event_appears
 		(type INSTANCE)
 ;+		(allowed-classes Events)
 ;+		(inverse-slot act_event)
+		(create-accessor read-write))
+	(multislot person_appears
+		(type INSTANCE)
+;+		(allowed-classes Persons)
+;+		(inverse-slot act_person)
 		(create-accessor read-write))
 	(single-slot status
 		(type STRING)
@@ -56,13 +51,18 @@
 		(type INSTANCE)
 ;+		(allowed-classes Acts)
 ;+		(cardinality 1 1)
-;+		(inverse-slot relation_apears)
+;+		(inverse-slot relation_appears)
+		(create-accessor read-write))
+	(multislot relation_appears
+		(type INSTANCE)
+;+		(allowed-classes)
+;+		(inverse-slot act_relation)
 		(create-accessor read-write))
 	(single-slot act_person
 		(type INSTANCE)
 ;+		(allowed-classes Acts)
 ;+		(cardinality 1 1)
-;+		(inverse-slot person_apears)
+;+		(inverse-slot person_appears)
 		(create-accessor read-write))
 	(single-slot gender
 		(type STRING)
@@ -76,7 +76,7 @@
 		(type INSTANCE)
 ;+		(allowed-classes Acts)
 ;+		(cardinality 1 1)
-;+		(inverse-slot event_apears)
+;+		(inverse-slot event_appears)
 		(create-accessor read-write))
 	(single-slot activity
 		(type STRING)
@@ -119,21 +119,21 @@
 (defclass Acts "Class that represents the Acts."
 	(is-a USER)
 	(role concrete)
-	(multislot relation_apears
-		(type INSTANCE)
-;+		(allowed-classes Relations)
-		(create-accessor read-write))
-	(single-slot actNum
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot event_apears
+	(multislot event_appears
 		(type INSTANCE)
 ;+		(allowed-classes Events)
 		(create-accessor read-write))
-	(multislot person_apears
+	(single-slot actNum
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot person_appears
 		(type INSTANCE)
 ;+		(allowed-classes Persons)
+		(create-accessor read-write))
+	(multislot relation_appears
+		(type INSTANCE)
+;+		(allowed-classes)
 		(create-accessor read-write)))
 
 (defclass Events
@@ -158,7 +158,7 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Incident "An Event with unknown active person, but someone has to do the action."
+(defclass Incident
 	(is-a Events)
 	(role concrete))
 
@@ -181,11 +181,11 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Friend_of "Represents \"friend of\" relation of two persons."
+(defclass Friend_of
 	(is-a Relations)
 	(role concrete))
 
-(defclass Dislikes "Represents dislikes relation of two persons."
+(defclass Dislikes
 	(is-a Relations)
 	(role concrete))
 

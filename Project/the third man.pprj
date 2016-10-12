@@ -1,4 +1,4 @@
-; Wed Oct 12 10:40:11 GMT+01:00 2016
+; Wed Oct 12 10:56:10 GMT+01:00 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -20,17 +20,17 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[the+third+man_ProjectKB_Class10143]
-		[the+third+man_ProjectKB_Class10144]
-		[the+third+man_ProjectKB_Class10145]
-		[the+third+man_ProjectKB_Class10146]
-		[the+third+man_ProjectKB_Class10147]
-		[the+third+man_ProjectKB_Class10148]
-		[the+third+man_ProjectKB_Class10149]
-		[the+third+man_ProjectKB_Class10150]
-		[the+third+man_ProjectKB_Class10151]
-		[the+third+man_ProjectKB_Class10152]
-		[the+third+man_ProjectKB_Class10153]))
+		[the+third+man_ProjectKB_Class10180]
+		[the+third+man_ProjectKB_Class10181]
+		[the+third+man_ProjectKB_Class10182]
+		[the+third+man_ProjectKB_Class10183]
+		[the+third+man_ProjectKB_Class10184]
+		[the+third+man_ProjectKB_Class10185]
+		[the+third+man_ProjectKB_Class10186]
+		[the+third+man_ProjectKB_Class10187]
+		[the+third+man_ProjectKB_Class10188]
+		[the+third+man_ProjectKB_Class10189]
+		[the+third+man_ProjectKB_Class10190]))
 
 ([CLSES_TAB] of  Widget
 
@@ -167,7 +167,7 @@
 		[KB_249220_Class10]
 		[KB_249220_Class11]))
 
-([KB_556148_Class0] of  Map
+([KB_805519_Class0] of  Map
 )
 
 ([LAYOUT_PROPERTIES] of  Property_List
@@ -255,6 +255,7 @@
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
+		[the+third+man_ProjectKB_Class10081]
 		[STANDARD_FACET_FORM_WIDGET]
 		[PAL_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
@@ -601,74 +602,188 @@
 ([the+third+man_ProjectKB_Class10] of  Property_List
 )
 
-([the+third+man_ProjectKB_Class10103] of  Widget
+([the+third+man_ProjectKB_Class10081] of  Widget
+
+	(is_hidden FALSE)
+	(name "Acts")
+	(property_list [the+third+man_ProjectKB_Class10082])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([the+third+man_ProjectKB_Class10082] of  Property_List
+
+	(properties
+		[the+third+man_ProjectKB_Class10083]
+		[the+third+man_ProjectKB_Class10084]
+		[the+third+man_ProjectKB_Class10086]
+		[the+third+man_ProjectKB_Class10090]
+		[the+third+man_ProjectKB_Class10094]))
+
+([the+third+man_ProjectKB_Class10083] of  Property_List
+
+	(name "layout properties"))
+
+([the+third+man_ProjectKB_Class10084] of  Widget
 
 	(height 60)
 	(is_hidden FALSE)
-	(name "act_num")
-	(property_list [the+third+man_ProjectKB_Class10104])
+	(label "Act Number")
+	(name "actNum")
+	(property_list [the+third+man_ProjectKB_Class10085])
 	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
 	(width 200)
 	(x 0)
 	(y 0))
 
-([the+third+man_ProjectKB_Class10104] of  Property_List
-)
+([the+third+man_ProjectKB_Class10085] of  Property_List
 
-([the+third+man_ProjectKB_Class10143] of  String
+	(properties
+		[the+third+man_ProjectKB_Class10126]
+		[the+third+man_ProjectKB_Class10127]))
+
+([the+third+man_ProjectKB_Class10086] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "person_appears")
+	(property_list [the+third+man_ProjectKB_Class10087])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 180))
+
+([the+third+man_ProjectKB_Class10087] of  Property_List
+
+	(properties
+		[the+third+man_ProjectKB_Class10088]
+		[the+third+man_ProjectKB_Class10089]))
+
+([the+third+man_ProjectKB_Class10088] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([the+third+man_ProjectKB_Class10089] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([the+third+man_ProjectKB_Class10090] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(name "relation_appears")
+	(property_list [the+third+man_ProjectKB_Class10091])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 200)
+	(y 0))
+
+([the+third+man_ProjectKB_Class10091] of  Property_List
+
+	(properties
+		[the+third+man_ProjectKB_Class10092]
+		[the+third+man_ProjectKB_Class10093]))
+
+([the+third+man_ProjectKB_Class10092] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([the+third+man_ProjectKB_Class10093] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([the+third+man_ProjectKB_Class10094] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(name "event_appears")
+	(property_list [the+third+man_ProjectKB_Class10095])
+	(widget_class_name "edu.stanford.smi.protege.widget.InstanceListWidget")
+	(width 200)
+	(x 0)
+	(y 60))
+
+([the+third+man_ProjectKB_Class10095] of  Property_List
+
+	(properties
+		[the+third+man_ProjectKB_Class10096]
+		[the+third+man_ProjectKB_Class10097]))
+
+([the+third+man_ProjectKB_Class10096] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-View References to Value"))
+
+([the+third+man_ProjectKB_Class10097] of  Boolean
+
+	(boolean_value FALSE)
+	(name "ButtonDisplayed-Delete Instance"))
+
+([the+third+man_ProjectKB_Class10126] of  String
+
+	(name "tooltip_text"))
+
+([the+third+man_ProjectKB_Class10127] of  Boolean
+
+	(boolean_value FALSE)
+	(name "readOnly_configured"))
+
+([the+third+man_ProjectKB_Class10180] of  String
 
 	(name "Persons")
 	(string_value "act_person{-}name"))
 
-([the+third+man_ProjectKB_Class10144] of  String
+([the+third+man_ProjectKB_Class10181] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([the+third+man_ProjectKB_Class10145] of  String
+([the+third+man_ProjectKB_Class10182] of  String
 
 	(name "Friend_of")
-	(string_value "act_relation{+-+%28}active{%29+friend+of+%28}passive{%29}"))
+	(string_value "act_relation{-%28}active{%29+friend+of+%28}passive{%29}"))
 
-([the+third+man_ProjectKB_Class10146] of  String
+([the+third+man_ProjectKB_Class10183] of  String
 
 	(name "Acts")
 	(string_value "actNum"))
 
-([the+third+man_ProjectKB_Class10147] of  String
+([the+third+man_ProjectKB_Class10184] of  String
 
 	(name "Dislikes")
-	(string_value "act_relation{+-+%28}active{%29}{+dislikes+%28}passive{%29}"))
+	(string_value "act_relation{-%28}active{%29+dislikes+%28}passive{%29}"))
 
-([the+third+man_ProjectKB_Class10148] of  String
+([the+third+man_ProjectKB_Class10185] of  String
 
 	(name "Knows")
-	(string_value "act_relation{+-+%28}active{%29+knows+%28}passive{%29}"))
+	(string_value "act_relation{-%28}active{%29+knows+%28}passive{%29}"))
 
-([the+third+man_ProjectKB_Class10149] of  String
+([the+third+man_ProjectKB_Class10186] of  String
 
 	(name "Likes")
-	(string_value "act_relation{+-+%28}active{%29+likes+%28}passive{%29}"))
+	(string_value "act_relation{-%28}active{%29+likes+%28}passive{%29}"))
 
-([the+third+man_ProjectKB_Class10150] of  String
+([the+third+man_ProjectKB_Class10187] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([the+third+man_ProjectKB_Class10151] of  String
+([the+third+man_ProjectKB_Class10188] of  String
 
 	(name "Loves")
-	(string_value "act_relation{+-+%28}active{%29+loves+%28}passive{%29}"))
+	(string_value "act_relation{-%28}active{%29+loves+%28}passive{%29}"))
 
-([the+third+man_ProjectKB_Class10152] of  String
+([the+third+man_ProjectKB_Class10189] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([the+third+man_ProjectKB_Class10153] of  String
+([the+third+man_ProjectKB_Class10190] of  String
 
 	(name "Helps")
-	(string_value "act_relation{+-+%28}active{%29+helps+%28}passive{%29}"))
+	(string_value "act_relation{-%28}active{%29+helps+%28}passive{%29}"))
 
 ([the+third+man_ProjectKB_Class11] of  Widget
 
