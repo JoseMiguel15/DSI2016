@@ -1,0 +1,110 @@
+; Wed Oct 12 10:40:11 GMT+01:00 2016
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([the+third+man_Class10] of  Persons
+
+	(act_person [the+third+man_Class41])
+	(activity "actress")
+	(gender "woman")
+	(location "vienna")
+	(name "Anna")
+	(nationality "austrian")
+	(status "alive"))
+
+([the+third+man_Class12] of  Friend_of
+
+	(act_relation [the+third+man_Class41])
+	(active [the+third+man_Class34])
+	(passive [the+third+man_Class9]))
+
+([the+third+man_Class26] of  Persons
+
+	(act_person [the+third+man_Class40])
+	(activity "writer")
+	(gender "man")
+	(location "vienna")
+	(name "Martins")
+	(nationality "USA")
+	(status "alive"))
+
+([the+third+man_Class34] of  Persons
+
+	(act_person [the+third+man_Class41])
+	(activity "international Police Major")
+	(gender "man")
+	(location "vienna")
+	(name "Calloway")
+	(nationality "english")
+	(status "alive"))
+
+([the+third+man_Class40] of  Acts
+
+	(actNum 0)
+	(person_apears
+		[the+third+man_Class26]
+		[the+third+man_Class7]
+		[the+third+man_Class8])
+	(relation_apears [the+third+man_Class5]))
+
+([the+third+man_Class41] of  Acts
+
+	(actNum 1)
+	(person_apears
+		[the+third+man_Class10]
+		[the+third+man_Class9]
+		[the+third+man_Class34])
+	(relation_apears [the+third+man_Class12]))
+
+([the+third+man_Class42] of  Acts
+
+	(actNum 2))
+
+([the+third+man_Class43] of  Acts
+
+	(actNum 3))
+
+([the+third+man_Class44] of  Acts
+
+	(actNum 4))
+
+([the+third+man_Class45] of  Acts
+
+	(actNum 5))
+
+([the+third+man_Class5] of  Dislikes
+
+	(act_relation [the+third+man_Class40])
+	(active [the+third+man_Class26])
+	(passive [the+third+man_Class7]))
+
+([the+third+man_Class7] of  Persons
+
+	(act_person [the+third+man_Class40])
+	(activity "vendor")
+	(gender "man")
+	(location "vienna")
+	(name "Lime")
+	(nationality "USA")
+	(status "alive"))
+
+([the+third+man_Class8] of  Persons
+
+	(act_person [the+third+man_Class40])
+	(activity "doorkeeper")
+	(gender "man")
+	(location "vienna")
+	(name "Karl")
+	(nationality "austrian")
+	(status "alive"))
+
+([the+third+man_Class9] of  Persons
+
+	(act_person [the+third+man_Class41])
+	(activity "sgt.")
+	(gender "man")
+	(location "vienna")
+	(name "Paine")
+	(nationality "english")
+	(status "alive"))
