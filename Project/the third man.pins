@@ -1,28 +1,104 @@
-; Wed Oct 12 10:56:10 GMT+01:00 2016
+; Thu Oct 13 22:46:16 GMT+01:00 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
 
-([the+third+man_Class10005] of  Acts
+([the+third+man_Class22] of  Act
 
-	(actNum "3"))
+	(actNum 1)
+	(event_appears [the+third+man_Class46]))
 
-([the+third+man_Class10006] of  Acts
+([the+third+man_Class23] of  Act
 
-	(actNum "4"))
+	(actNum 2))
 
-([the+third+man_Class10007] of  Acts
+([the+third+man_Class24] of  Act
 
-	(actNum "5"))
+	(actNum 3))
 
-([the+third+man_Class2] of  Acts
+([the+third+man_Class25] of  Act
 
-	(actNum "0"))
+	(actNum 4))
 
-([the+third+man_Class3] of  Acts
+([the+third+man_Class26] of  Act
 
-	(actNum "1"))
+	(actNum 5))
 
-([the+third+man_Class4] of  Acts
+([the+third+man_Class31] of  Person
 
-	(actNum "2"))
+	(act_person [the+third+man_Class7])
+	(activity "writer")
+	(gender "male")
+	(location_person [the+third+man_Class34])
+	(name "Martins")
+	(nationality "english")
+	(status_person [the+third+man_Class37]))
+
+([the+third+man_Class33] of  Person
+
+	(act_person [the+third+man_Class7])
+	(activity "vendor")
+	(gender "male")
+	(location_person [the+third+man_Class34])
+	(name "Limes")
+	(nationality "english")
+	(status_person [the+third+man_Class37]))
+
+([the+third+man_Class34] of  Location
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "vienna")
+	(person_location
+		[the+third+man_Class33]
+		[the+third+man_Class31]))
+
+([the+third+man_Class35] of  Location
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "romania"))
+
+([the+third+man_Class36] of  Location
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "usa"))
+
+([the+third+man_Class37] of  Status
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "alive")
+	(person_status
+		[the+third+man_Class33]
+		[the+third+man_Class31]))
+
+([the+third+man_Class38] of  Status
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "death"))
+
+([the+third+man_Class45] of  Action
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class33])
+	(cause_of [the+third+man_Class47])
+	(descEvent "kills")
+	(receiver [the+third+man_Class31]))
+
+([the+third+man_Class46] of  Incident
+
+	(act_event [the+third+man_Class22])
+	(consequence_of [the+third+man_Class47])
+	(descEvent "buried")
+	(receiver [the+third+man_Class31]))
+
+([the+third+man_Class47] of  Causes
+
+	(cause [the+third+man_Class45])
+	(consequence [the+third+man_Class46]))
+
+([the+third+man_Class7] of  Act
+
+	(actNum 0)
+	(event_appears [the+third+man_Class45])
+	(person_appears
+		[the+third+man_Class31]
+		[the+third+man_Class33]))

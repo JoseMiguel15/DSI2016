@@ -1,4 +1,4 @@
-; Wed Oct 12 10:56:10 GMT+01:00 2016
+; Thu Oct 13 22:46:16 GMT+01:00 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
@@ -8,199 +8,327 @@
 	(is-a USER)
 	(role abstract)
 	(single-slot name_
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot location
+;+		(comment "name of the person")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot actNum
-		(type STRING)
-;+		(cardinality 0 1)
+;+		(comment "number of the act so they are sorted")
+		(type INTEGER)
+		(range 0 5)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot description
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot act_fact
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot consequence_of
+		(type INSTANCE)
+;+		(allowed-classes Causes)
+;+		(inverse-slot consequence)
 		(create-accessor read-write))
 	(multislot passive
+;+		(comment "Person that is the receiver point")
 		(type INSTANCE)
-;+		(allowed-classes Persons)
+;+		(allowed-classes Person)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
-	(single-slot active
+	(multislot person_location
 		(type INSTANCE)
-;+		(allowed-classes Persons)
+;+		(allowed-classes Person)
+;+		(inverse-slot location_person)
+		(create-accessor read-write))
+	(single-slot active
+;+		(comment "Person that is the start point")
+		(type INSTANCE)
+;+		(allowed-classes Person)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot event_appears
+;+		(comment "events that appears in this acts")
 		(type INSTANCE)
-;+		(allowed-classes Events)
+;+		(allowed-classes Event)
 ;+		(inverse-slot act_event)
 		(create-accessor read-write))
 	(multislot person_appears
+;+		(comment "persons that appears on the act")
 		(type INSTANCE)
-;+		(allowed-classes Persons)
+;+		(allowed-classes Person)
 ;+		(inverse-slot act_person)
 		(create-accessor read-write))
-	(single-slot status
+	(multislot person_status
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(inverse-slot status_person)
+		(create-accessor read-write))
+	(single-slot cause
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(cardinality 1 1)
+;+		(inverse-slot cause_of)
+		(create-accessor read-write))
+	(single-slot act
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot act_relation
-		(type INSTANCE)
-;+		(allowed-classes Acts)
-;+		(cardinality 1 1)
-;+		(inverse-slot relation_appears)
+	(single-slot descEvent
+;+		(comment "description of the event explaininig what happened")
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot relation_appears
+	(single-slot consequence
 		(type INSTANCE)
-;+		(allowed-classes)
-;+		(inverse-slot act_relation)
+;+		(allowed-classes Event)
+;+		(cardinality 1 1)
+;+		(inverse-slot consequence_of)
+		(create-accessor read-write))
+	(multislot receiver
+;+		(comment "person that receives the effect of an acction or incident")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write))
+	(single-slot desc_fact
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot status_person
+		(type INSTANCE)
+;+		(allowed-classes Status)
+;+		(cardinality 1 1)
+;+		(inverse-slot person_status)
 		(create-accessor read-write))
 	(single-slot act_person
+;+		(comment "act where the person is related to")
 		(type INSTANCE)
-;+		(allowed-classes Acts)
+;+		(allowed-classes Act)
 ;+		(cardinality 1 1)
 ;+		(inverse-slot person_appears)
 		(create-accessor read-write))
-	(single-slot gender
+	(multislot cause_of
+		(type INSTANCE)
+;+		(allowed-classes Causes)
+;+		(inverse-slot cause)
+		(create-accessor read-write))
+	(single-slot nationality
+;+		(comment "nationality of the person")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot nationality
+	(single-slot gender
+;+		(comment "gender of the person")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot act_event
+;+		(comment "Act where the event happens")
 		(type INSTANCE)
-;+		(allowed-classes Acts)
+;+		(allowed-classes Act)
 ;+		(cardinality 1 1)
 ;+		(inverse-slot event_appears)
 		(create-accessor read-write))
 	(single-slot activity
+;+		(comment "Activity that a person do to earn money")
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_person
+		(type INSTANCE)
+;+		(allowed-classes Location)
+;+		(cardinality 1 1)
+;+		(inverse-slot person_location)
 		(create-accessor read-write)))
 
-(defclass Persons "Concrete class of Persons."
+(defclass Person "Concrete class of Persons."
 	(is-a USER)
 	(role concrete)
-	(single-slot location
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot status
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot activity
+;+		(comment "Activity that a person do to earn money")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot name_
+;+		(comment "name of the person")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot act_person
+	(single-slot status_person
 		(type INSTANCE)
-;+		(allowed-classes Acts)
+;+		(allowed-classes Status)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot gender
+	(single-slot act_person
+;+		(comment "act where the person is related to")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nationality
+;+		(comment "nationality of the person")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot nationality
+	(single-slot gender
+;+		(comment "gender of the person")
 		(type STRING)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot location_person
+		(type INSTANCE)
+;+		(allowed-classes Location)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Acts "Class that represents the Acts."
+(defclass Act "Class that represents the Acts."
 	(is-a USER)
 	(role concrete)
 	(multislot event_appears
+;+		(comment "events that appears in this acts")
 		(type INSTANCE)
-;+		(allowed-classes Events)
+;+		(allowed-classes Event)
 		(create-accessor read-write))
 	(single-slot actNum
-		(type STRING)
-;+		(cardinality 0 1)
+;+		(comment "number of the act so they are sorted")
+		(type INTEGER)
+		(range 0 5)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot person_appears
+;+		(comment "persons that appears on the act")
 		(type INSTANCE)
-;+		(allowed-classes Persons)
-		(create-accessor read-write))
-	(multislot relation_appears
-		(type INSTANCE)
-;+		(allowed-classes)
+;+		(allowed-classes Person)
 		(create-accessor read-write)))
 
-(defclass Events
+(defclass Event "Class that represents the idea of events that just happens, they are not done by someone"
 	(is-a USER)
-	(role concrete)
-	(single-slot description
+	(role abstract)
+	(single-slot descEvent
+;+		(comment "description of the event explaininig what happened")
 		(type STRING)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
+	(multislot consequence_of
+		(type INSTANCE)
+;+		(allowed-classes Causes)
+		(create-accessor read-write))
+	(multislot cause_of
+		(type INSTANCE)
+;+		(allowed-classes Causes)
+		(create-accessor read-write))
 	(single-slot act_event
+;+		(comment "Act where the event happens")
 		(type INSTANCE)
-;+		(allowed-classes Acts)
+;+		(allowed-classes Act)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Actions
-	(is-a Events)
+(defclass Action "Events that are done by someone and may have effects on others"
+	(is-a Event)
 	(role concrete)
-	(single-slot active
+	(multislot receiver
+;+		(comment "person that receives the effect of an acction or incident")
 		(type INSTANCE)
-;+		(allowed-classes Persons)
+;+		(allowed-classes Person)
+		(create-accessor read-write))
+	(single-slot active
+;+		(comment "Person that is the start point")
+		(type INSTANCE)
+;+		(allowed-classes Person)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Incident
-	(is-a Events)
-	(role concrete))
+(defclass Incident "Events that are done by someone but you don't know who is the person that did it, it may affect other people"
+	(is-a Event)
+	(role concrete)
+	(multislot receiver
+;+		(comment "person that receives the effect of an acction or incident")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
 
-(defclass Relations
+(defclass Causes
+	(is-a USER)
+	(role concrete)
+	(single-slot cause
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot consequence
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Relation "Idea of the concept of a relation where a relation is a unidirectional line between 2 people"
 	(is-a USER)
 	(role abstract)
-	(single-slot act_relation
-		(type INSTANCE)
-;+		(allowed-classes Acts)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(multislot passive
+;+		(comment "Person that is the receiver point")
 		(type INSTANCE)
-;+		(allowed-classes Persons)
+;+		(allowed-classes Person)
 		(cardinality 1 ?VARIABLE)
 		(create-accessor read-write))
+	(single-slot act
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot active
+;+		(comment "Person that is the start point")
 		(type INSTANCE)
-;+		(allowed-classes Persons)
+;+		(allowed-classes Person)
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
-(defclass Friend_of
-	(is-a Relations)
+(defclass Friend_of "Kind  of relation that specifies friendship"
+	(is-a Relation)
 	(role concrete))
 
-(defclass Dislikes
-	(is-a Relations)
+(defclass Dislikes "Kind  of relation that specifies dislikes"
+	(is-a Relation)
 	(role concrete))
 
-(defclass Helps
-	(is-a Relations)
+(defclass Helps "Kind  of relation that specifies thie first person is helping the second"
+	(is-a Relation)
 	(role concrete))
 
-(defclass Loves
-	(is-a Relations)
+(defclass Loves "Kind of relation that specifies the first person is in love with the second"
+	(is-a Relation)
 	(role concrete))
 
-(defclass Knows
-	(is-a Relations)
+(defclass Knows "Kind  of relation that specifies they know  the person but is neutral towards it"
+	(is-a Relation)
 	(role concrete))
 
-(defclass Likes
-	(is-a Relations)
+(defclass Likes "Kind  of relation that specifies he likes how the other person is"
+	(is-a Relation)
 	(role concrete))
+
+(defclass Fact
+	(is-a USER)
+	(role concrete)
+	(single-slot act_fact
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot desc_fact
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Status
+	(is-a Fact)
+	(role concrete)
+	(multislot person_status
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
+
+(defclass Location
+	(is-a Fact)
+	(role concrete)
+	(multislot person_location
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
