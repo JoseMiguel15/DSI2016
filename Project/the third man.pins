@@ -1,12 +1,142 @@
-; Thu Oct 13 22:46:16 GMT+01:00 2016
+; Fri Oct 14 23:00:23 GMT+01:00 2016
 ; 
 ;+ (version "3.4.8")
 ;+ (build "Build 629")
 
+([the+third+man_Class1] of  Nationality
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "american")
+	(person_nationality
+		[the+third+man_Class10012]
+		[the+third+man_Class10008]))
+
+([the+third+man_Class10003] of  Status
+
+	(act_fact [the+third+man_Class26])
+	(desc_fact "alive")
+	(person_status [the+third+man_Class10008])
+	(produced_by [the+third+man_Class20012]))
+
+([the+third+man_Class10008] of  Person
+
+	(activity "writer")
+	(gender "male")
+	(location_person
+		[the+third+man_Class10009]
+		[the+third+man_Class10016])
+	(name "Martins")
+	(nationality_person [the+third+man_Class1])
+	(status_person
+		[the+third+man_Class10027]
+		[the+third+man_Class10003]))
+
+([the+third+man_Class10009] of  Location
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "usa")
+	(person_location [the+third+man_Class10008]))
+
+([the+third+man_Class10012] of  Person
+
+	(3man_person [the+third+man_Class20033])
+	(activity "unknown")
+	(gender "male")
+	(location_person [the+third+man_Class10013])
+	(name "Lime")
+	(nationality_person [the+third+man_Class1])
+	(status_person
+		[the+third+man_Class10027]
+		[the+third+man_Class10028]
+		[the+third+man_Class20013]))
+
+([the+third+man_Class10013] of  Location
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "vienna")
+	(person_location
+		[the+third+man_Class10012]
+		[the+third+man_Class10020]))
+
+([the+third+man_Class10014] of  Action
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(cause_of [the+third+man_Class10015])
+	(descEvent "arrives vienna"))
+
+([the+third+man_Class10015] of  Action
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10012])
+	(consequence_of [the+third+man_Class10014])
+	(descEvent "offers job"))
+
+([the+third+man_Class10016] of  Location
+
+	(act_fact [the+third+man_Class22])
+	(desc_fact "vienna")
+	(person_location [the+third+man_Class10008]))
+
+([the+third+man_Class10020] of  Person
+
+	(activity "janitor")
+	(gender "male")
+	(location_person [the+third+man_Class10013])
+	(name "Karl")
+	(nationality_person [the+third+man_Class2])
+	(status_person
+		[the+third+man_Class10027]
+		[the+third+man_Class10028]))
+
+([the+third+man_Class10027] of  Status
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "alive")
+	(person_status
+		[the+third+man_Class10012]
+		[the+third+man_Class10008]
+		[the+third+man_Class10020]))
+
+([the+third+man_Class10028] of  Status
+
+	(act_fact [the+third+man_Class22])
+	(desc_fact "dead")
+	(person_status
+		[the+third+man_Class10020]
+		[the+third+man_Class10012]))
+
+([the+third+man_Class2] of  Nationality
+
+	(act_fact [the+third+man_Class7])
+	(desc_fact "austrian")
+	(person_nationality [the+third+man_Class10020]))
+
+([the+third+man_Class20012] of  Action
+
+	(act_event [the+third+man_Class25])
+	(active [the+third+man_Class10012])
+	(descEvent "appears")
+	(results
+		[the+third+man_Class20033]
+		[the+third+man_Class10003]))
+
+([the+third+man_Class20013] of  Status
+
+	(act_fact [the+third+man_Class25])
+	(desc_fact "alive")
+	(person_status [the+third+man_Class10012]))
+
+([the+third+man_Class20033] of  is3man
+
+	(act_fact [the+third+man_Class26])
+	(desc_fact "is 3man")
+	(person_3man [the+third+man_Class10012])
+	(produced_by [the+third+man_Class20012]))
+
 ([the+third+man_Class22] of  Act
 
-	(actNum 1)
-	(event_appears [the+third+man_Class46]))
+	(actNum 1))
 
 ([the+third+man_Class23] of  Act
 
@@ -18,87 +148,16 @@
 
 ([the+third+man_Class25] of  Act
 
-	(actNum 4))
+	(actNum 4)
+	(event_appears [the+third+man_Class20012]))
 
 ([the+third+man_Class26] of  Act
 
 	(actNum 5))
 
-([the+third+man_Class31] of  Person
-
-	(act_person [the+third+man_Class7])
-	(activity "writer")
-	(gender "male")
-	(location_person [the+third+man_Class34])
-	(name "Martins")
-	(nationality "english")
-	(status_person [the+third+man_Class37]))
-
-([the+third+man_Class33] of  Person
-
-	(act_person [the+third+man_Class7])
-	(activity "vendor")
-	(gender "male")
-	(location_person [the+third+man_Class34])
-	(name "Limes")
-	(nationality "english")
-	(status_person [the+third+man_Class37]))
-
-([the+third+man_Class34] of  Location
-
-	(act_fact [the+third+man_Class7])
-	(desc_fact "vienna")
-	(person_location
-		[the+third+man_Class33]
-		[the+third+man_Class31]))
-
-([the+third+man_Class35] of  Location
-
-	(act_fact [the+third+man_Class7])
-	(desc_fact "romania"))
-
-([the+third+man_Class36] of  Location
-
-	(act_fact [the+third+man_Class7])
-	(desc_fact "usa"))
-
-([the+third+man_Class37] of  Status
-
-	(act_fact [the+third+man_Class7])
-	(desc_fact "alive")
-	(person_status
-		[the+third+man_Class33]
-		[the+third+man_Class31]))
-
-([the+third+man_Class38] of  Status
-
-	(act_fact [the+third+man_Class7])
-	(desc_fact "death"))
-
-([the+third+man_Class45] of  Action
-
-	(act_event [the+third+man_Class7])
-	(active [the+third+man_Class33])
-	(cause_of [the+third+man_Class47])
-	(descEvent "kills")
-	(receiver [the+third+man_Class31]))
-
-([the+third+man_Class46] of  Incident
-
-	(act_event [the+third+man_Class22])
-	(consequence_of [the+third+man_Class47])
-	(descEvent "buried")
-	(receiver [the+third+man_Class31]))
-
-([the+third+man_Class47] of  Causes
-
-	(cause [the+third+man_Class45])
-	(consequence [the+third+man_Class46]))
-
 ([the+third+man_Class7] of  Act
 
 	(actNum 0)
-	(event_appears [the+third+man_Class45])
-	(person_appears
-		[the+third+man_Class31]
-		[the+third+man_Class33]))
+	(event_appears
+		[the+third+man_Class10014]
+		[the+third+man_Class10015]))
