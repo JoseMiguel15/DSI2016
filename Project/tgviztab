@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE TOUCHGRAPH_LB [
+
+<!ELEMENT TOUCHGRAPH_LB (NODESET, EDGESET, PARAMETERS)>
+<!ELEMENT NODESET (NODE+)>
+<!ELEMENT EDGESET (EDGE*)>
+<!ELEMENT PARAMETERS (PARAM*)>
+
+<!ELEMENT NODE (NODE_LOCATION?, NODE_LABEL?, NODE_URL?, NODE_HINT?)>
+
+<!ELEMENT NODE_LABEL EMPTY>
+<!ELEMENT NODE_URL EMPTY>
+<!ELEMENT NODE_HINT EMPTY>
+
+<!ATTLIST TOUCHGRAPH_LB
+  version CDATA #REQUIRED >
+
+<!ATTLIST NODE
+  nodeID CDATA #REQUIRED >
+
+<!ATTLIST NODE_LOCATION
+  visible CDATA #IMPLIED
+  x CDATA #IMPLIED
+  y CDATA #IMPLIED >
+
+<!ATTLIST NODE_LABEL
+  label CDATA #REQUIRED 
+  shape CDATA #IMPLIED
+  backColor CDATA #IMPLIED 
+  textColor CDATA #IMPLIED
+  fontSize CDATA #IMPLIED >
+
+<!ATTLIST NODE_URL 
+  url CDATA #REQUIRED 
+  urlIsLocal CDATA #IMPLIED 
+  urlIsXML CDATA #IMPLIED >
+
+<!ATTLIST NODE_HINT 
+  hint CDATA #REQUIRED 
+  height CDATA #IMPLIED 
+  width CDATA #IMPLIED 
+  isHTML CDATA #IMPLIED >  
+
+<!ELEMENT EDGE EMPTY>
+
+<!ATTLIST EDGE
+  fromID CDATA #REQUIRED
+  toID CDATA #REQUIRED 
+  length CDATA #IMPLIED 
+  color CDATA #IMPLIED 
+  type CDATA #IMPLIED
+  visible CDATA #IMPLIED >
+
+<!ELEMENT PARAM EMPTY>
+
+<!ATTLIST PARAM
+  name CDATA #REQUIRED
+  value CDATA #REQUIRED >
+]>
+<TOUCHGRAPH_LB version="1.4">
+    <NODESET/>
+    <EDGESET/>
+    <PARAMETERS>
+        <PARAM name="SLOT:::produced_by:::Changed" value="false"/>
+        <PARAM name="SLOT:::person_status:::Show" value="true"/>
+        <PARAM name="SLOT:::act_relation:::Changed" value="false"/>
+        <PARAM name="CLS:::Event:::Changed" value="false"/>
+        <PARAM name="CLS:::3man:::Color" value="-1"/>
+        <PARAM name="SLOT:::person_status:::Changed" value="false"/>
+        <PARAM name="edgTXT" value="false"/>
+        <PARAM name="SLOT:::produced_by:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Friend_of:::Color" value="-1"/>
+        <PARAM name="clsFS" value="12"/>
+        <PARAM name="maxEdgIndex" value="3"/>
+        <PARAM name="SLOT:::3man_act:::Show" value="true"/>
+        <PARAM name="SLOT:::person_location:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::cause_of:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Location:::Changed" value="false"/>
+        <PARAM name="SLOT:::3man_person:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::act_properties_persons:::Show" value="true"/>
+        <PARAM name="CLS:::Knows:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_relation:::Show" value="true"/>
+        <PARAM name="edgITLC" value="false"/>
+        <PARAM name="SLOT:::cause_of:::Show" value="true"/>
+        <PARAM name="CLS:::Action:::Changed" value="false"/>
+        <PARAM name="SLOT:::receiver:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::act_properties_persons:::Changed" value="false"/>
+        <PARAM name="insBC" value="-1"/>
+        <PARAM name="edgBOLD" value="true"/>
+        <PARAM name="CLS:::Act:::Color" value="-1"/>
+        <PARAM name="SLOT:::cause:::Color" value="-16777040"/>
+        <PARAM name="rotateSB" value="0"/>
+        <PARAM name="SLOT:::3man_is:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::act_person:::Color" value="-16777040"/>
+        <PARAM name="hyperSB" value="0"/>
+        <PARAM name="CLS:::Event:::Color" value="-1"/>
+        <PARAM name="SLOT:::results:::Color" value="-16777040"/>
+        <PARAM name="edgBC" value="-16777040"/>
+        <PARAM name="CLS:::Incident:::Changed" value="false"/>
+        <PARAM name="CLS:::Knows:::Color" value="-1"/>
+        <PARAM name="SLOT:::relation_act:::Changed" value="false"/>
+        <PARAM name="SLOT:::person_nationality:::Changed" value="false"/>
+        <PARAM name="SLOT:::active:::Show" value="true"/>
+        <PARAM name="insLW" value="25"/>
+        <PARAM name="CLS:::Nationality:::Changed" value="false"/>
+        <PARAM name="SLOT:::relation_act:::Show" value="true"/>
+        <PARAM name="SLOT:::event_appears:::Show" value="true"/>
+        <PARAM name="insITLC" value="false"/>
+        <PARAM name="CLS:::Status:::Color" value="-1"/>
+        <PARAM name="SLOT:::nationality_person:::Show" value="true"/>
+        <PARAM name="CLS:::PersonProperties:::Color" value="-1"/>
+        <PARAM name="insBOLD" value="true"/>
+        <PARAM name="ins" value="false"/>
+        <PARAM name="SLOT:::3man_person:::Show" value="true"/>
+        <PARAM name="sys" value="false"/>
+        <PARAM name="edgLW" value="20"/>
+        <PARAM name="clsslt" value="true"/>
+        <PARAM name="SLOT:::active:::Changed" value="false"/>
+        <PARAM name="SLOT:::consequence_of:::Changed" value="false"/>
+        <PARAM name="SLOT:::event_appears:::Changed" value="false"/>
+        <PARAM name="CLS:::Friend_of:::Changed" value="false"/>
+        <PARAM name="SLOT:::person_appears:::Changed" value="false"/>
+        <PARAM name="clsBC" value="-1"/>
+        <PARAM name="CLS:::Person:::Changed" value="false"/>
+        <PARAM name="CLS:::Likes:::Color" value="-1"/>
+        <PARAM name="SLOT:::receiver:::Changed" value="false"/>
+        <PARAM name="SLOT:::status_person:::Show" value="true"/>
+        <PARAM name="SLOT:::3man_act:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_event:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_3man:::Changed" value="false"/>
+        <PARAM name="SLOT:::nationality_person:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::act_3man:::Show" value="true"/>
+        <PARAM name="radius" value="10"/>
+        <PARAM name="SLOT:::act_person:::Show" value="true"/>
+        <PARAM name="CLS:::ActionTo:::Changed" value="false"/>
+        <PARAM name="SlotsCheckBoxState" value="false"/>
+        <PARAM name="SLOT:::location_person:::Changed" value="false"/>
+        <PARAM name="SLOT:::produced_by:::Show" value="true"/>
+        <PARAM name="SLOT:::passive:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Status:::Changed" value="false"/>
+        <PARAM name="SLOT:::location_person:::Show" value="true"/>
+        <PARAM name="SLOT:::cause_of:::Changed" value="false"/>
+        <PARAM name="SLOT:::consequence:::Show" value="true"/>
+        <PARAM name="SLOT:::person_nationality:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Dislikes:::Changed" value="false"/>
+        <PARAM name="SLOT:::person_3man:::Changed" value="false"/>
+        <PARAM name="CLS:::Location:::Color" value="-1"/>
+        <PARAM name="cls" value="true"/>
+        <PARAM name="SLOT:::event_appears:::Color" value="-16777040"/>
+        <PARAM name="clsLW" value="25"/>
+        <PARAM name="SLOT:::nationality_person:::Changed" value="false"/>
+        <PARAM name="SLOT:::status_person:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::3man_person:::Changed" value="false"/>
+        <PARAM name="SLOT:::consequence:::Changed" value="false"/>
+        <PARAM name="CLS:::Incident:::Color" value="-1"/>
+        <PARAM name="SLOT:::3man_is:::Show" value="true"/>
+        <PARAM name="SLOT:::3man_is:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_person:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_properties_persons:::Color" value="-16777040"/>
+        <PARAM name="CLS:::ActionTo:::Color" value="-1"/>
+        <PARAM name="maxExpEdgIndex" value="3"/>
+        <PARAM name="SLOT:::person_nationality:::Show" value="true"/>
+        <PARAM name="SLOT:::person_3man:::Color" value="-16777040"/>
+        <PARAM name="CLS:::PersonProperties:::Changed" value="false"/>
+        <PARAM name="SLOT:::3man_act:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Relation:::Color" value="-1"/>
+        <PARAM name="CLS:::Loves:::Color" value="-1"/>
+        <PARAM name="SLOT:::person_status:::Color" value="-16777040"/>
+        <PARAM name="sup" value="true"/>
+        <PARAM name="SLOT:::cause:::Show" value="true"/>
+        <PARAM name="insTC" value="-10092442"/>
+        <PARAM name="CLS:::Fact:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_event:::Show" value="true"/>
+        <PARAM name="sub" value="true"/>
+        <PARAM name="SLOT:::passive:::Changed" value="false"/>
+        <PARAM name="CLS:::Dislikes:::Color" value="-1"/>
+        <PARAM name="edgTC" value="-16777040"/>
+        <PARAM name="CLS:::Nationality:::Color" value="-1"/>
+        <PARAM name="CLS:::Fact:::Color" value="-1"/>
+        <PARAM name="backlinks" value="true"/>
+        <PARAM name="insFS" value="12"/>
+        <PARAM name="SLOT:::cause:::Changed" value="false"/>
+        <PARAM name="SLOT:::passive:::Show" value="true"/>
+        <PARAM name="zoomSB" value="3"/>
+        <PARAM name="SLOT:::person_location:::Changed" value="false"/>
+        <PARAM name="SLOT:::results:::Show" value="true"/>
+        <PARAM name="SLOT:::receiver:::Show" value="true"/>
+        <PARAM name="SLOT:::person_3man:::Show" value="true"/>
+        <PARAM name="SLOT:::act_relation:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Loves:::Changed" value="false"/>
+        <PARAM name="sysslt" value="false"/>
+        <PARAM name="SLOT:::person_appears:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::person_appears:::Show" value="true"/>
+        <PARAM name="SLOT:::relation_act:::Color" value="-16777040"/>
+        <PARAM name="edgFS" value="10"/>
+        <PARAM name="SLOT:::location_person:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::status_person:::Changed" value="false"/>
+        <PARAM name="clsITLC" value="false"/>
+        <PARAM name="CLS:::Act:::Changed" value="false"/>
+        <PARAM name="SLOT:::consequence_of:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::act_event:::Color" value="-16777040"/>
+        <PARAM name="SLOT:::active:::Color" value="-16777040"/>
+        <PARAM name="CLS:::Likes:::Changed" value="false"/>
+        <PARAM name="CLS:::3man:::Changed" value="false"/>
+        <PARAM name="SLOT:::act_3man:::Color" value="-16777040"/>
+        <PARAM name="clsBOLD" value="true"/>
+        <PARAM name="SLOT:::consequence_of:::Show" value="true"/>
+        <PARAM name="CLS:::Action:::Color" value="-1"/>
+        <PARAM name="CLS:::Person:::Color" value="-1"/>
+        <PARAM name="clsTC" value="-10138103"/>
+        <PARAM name="SLOT:::consequence:::Color" value="-16777040"/>
+        <PARAM name="speed" value="1"/>
+        <PARAM name="SLOT:::person_location:::Show" value="true"/>
+        <PARAM name="sysclt" value="false"/>
+        <PARAM name="CLS:::Relation:::Changed" value="false"/>
+        <PARAM name="SLOT:::results:::Changed" value="false"/>
+    </PARAMETERS>
+</TOUCHGRAPH_LB>

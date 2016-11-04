@@ -1,0 +1,459 @@
+; Sun Oct 16 14:15:24 GMT+01:00 2016
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot name_
+;+		(comment "Name of the person.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot actNum
+;+		(comment "The number of the act.\ne.g.: 0 (represents Act 0)")
+		(type INTEGER)
+		(range 0 5)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot consequence_of
+;+		(comment "Events that are the cause of this current event.\ne.g.: if we consider \"Martins arrives to Vienna\" is a consequence of the event \"Limes offers Martins a job\"")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(inverse-slot cause_of)
+		(create-accessor read-write))
+	(multislot person_location
+;+		(comment "People whose location is the actual instance.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(inverse-slot location_person)
+		(create-accessor read-write))
+	(multislot passive
+;+		(comment "The person that is the \"end\" point of the relation.\ne.g.: \"Martins is friend of Lime\" (passive: Lime)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot person_3man
+;+		(comment "Instance of the person who is The Third Man")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 1 1)
+;+		(inverse-slot 3man_person)
+		(create-accessor read-write))
+	(single-slot active
+;+		(comment "The person that actually did this action or the person that is the \"start\" point of a relation.\ne.g.: \n- \"Karl appears\" (Action)\n- \"Martins is friend of Lime (Relation, active: Martins)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot 3man_person
+;+		(comment "Represents the instance of 3man that tells us if a person is The Third man")
+		(type INSTANCE)
+;+		(allowed-classes 3man)
+;+		(cardinality 0 1)
+;+		(inverse-slot person_3man)
+		(create-accessor read-write))
+	(multislot event_appears
+;+		(comment "Chain of events that appear in each act (multiple).\ne.g.: In act 0 Martins appears")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(inverse-slot act_event)
+		(create-accessor read-write))
+	(multislot relation_act
+;+		(comment "Chain of relations that appear during each act (multiple).\ne.g.: In act 0 Martins is friend of Lime")
+		(type INSTANCE)
+;+		(allowed-classes Relation)
+;+		(inverse-slot act_relation)
+		(create-accessor read-write))
+	(multislot 3man_is
+		(type INSTANCE)
+;+		(allowed-classes 3man)
+		(cardinality 0 6)
+		(create-accessor read-write))
+	(multislot person_appears
+;+		(comment "persons that appears on the act")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(inverse-slot act_person)
+		(create-accessor read-write))
+	(multislot nationality_person
+;+		(comment "Nationalities that a person may have.")
+		(type INSTANCE)
+;+		(allowed-classes Nationality)
+;+		(inverse-slot person_nationality)
+		(create-accessor read-write))
+	(multislot person_status
+;+		(comment "People whose status is the actual instance.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(inverse-slot status_person)
+		(create-accessor read-write))
+	(single-slot cause
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot person_nationality
+;+		(comment "People whose location is the actual instance.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(inverse-slot nationality_person)
+		(create-accessor read-write))
+	(single-slot act_properties_persons
+;+		(comment "The act where the fact is bounded, reflects the changes in the history.")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot descEvent
+;+		(comment "Brief description of the event")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot results
+;+		(comment "The chain of facts that are generated with the current event.\ne.g.: if we consider the event \"Martins meets Karl\" generates the fact that \"Karl is alive\"")
+		(type INSTANCE)
+;+		(allowed-classes Fact)
+;+		(inverse-slot produced_by)
+		(create-accessor read-write))
+	(single-slot consequence
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot act_relation
+;+		(comment "The act where this particular relation happens.\ne.g.: Lime is friend of Martins in act 0")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+;+		(inverse-slot relation_act)
+		(create-accessor read-write))
+	(multislot receiver
+;+		(comment "The person that \"receives\" the event.\ne.g.: \n- Martins meets Karl (ActionTo)\n- Martins receives a call (Incident)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write))
+	(multislot produced_by
+;+		(comment "The chain of events that generated this fact.")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(inverse-slot results)
+		(create-accessor read-write))
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot act_3man
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot 3man_act
+;+		(comment "Instance of Person that is the 3 man.\ne.g.: In Act 5 Lime is The Third Man")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot status_person
+;+		(comment "Different type of status that a person may have.")
+		(type INSTANCE)
+;+		(allowed-classes Status)
+;+		(inverse-slot person_status)
+		(create-accessor read-write))
+	(single-slot act_person
+;+		(comment "act where the person is related to")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+;+		(inverse-slot person_appears)
+		(create-accessor read-write))
+	(multislot cause_of
+;+		(comment "The events caused by the current event.\ne.g.: if we consider \"Martins arrives to Vienna\" causes the event \"Martins goes to meet Lime\"")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+;+		(inverse-slot consequence_of)
+		(create-accessor read-write))
+	(single-slot gender
+;+		(comment "Gender of the person.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot act_event
+;+		(comment "The act where this particular event happens (required single)\ne.g.: Lime dies in act 0")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+;+		(inverse-slot event_appears)
+		(create-accessor read-write))
+	(single-slot activity
+;+		(comment "Activity that a person does for living.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot location_person
+;+		(comment "Instances of location where the person has been.")
+		(type INSTANCE)
+;+		(allowed-classes Location)
+;+		(inverse-slot person_location)
+		(create-accessor read-write)))
+
+(defclass Person "Concrete class of Persons."
+	(is-a USER)
+	(role concrete)
+	(single-slot 3man_person
+;+		(comment "Represents the instance of 3man that tells us if a person is The Third man")
+		(type INSTANCE)
+;+		(allowed-classes 3man)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot activity
+;+		(comment "Activity that a person does for living.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot name_
+;+		(comment "Name of the person.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot status_person
+;+		(comment "Different type of status that a person may have.")
+		(type INSTANCE)
+;+		(allowed-classes Status)
+		(create-accessor read-write))
+	(multislot nationality_person
+;+		(comment "Nationalities that a person may have.")
+		(type INSTANCE)
+;+		(allowed-classes Nationality)
+		(create-accessor read-write))
+	(multislot location_person
+;+		(comment "Instances of location where the person has been.")
+		(type INSTANCE)
+;+		(allowed-classes Location)
+		(create-accessor read-write))
+	(single-slot gender
+;+		(comment "Gender of the person.")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Act "This class represents the timeline, which are, the Acts."
+	(is-a USER)
+	(role concrete)
+	(multislot event_appears
+;+		(comment "Chain of events that appear in each act (multiple).\ne.g.: In act 0 Martins appears")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+		(create-accessor read-write))
+	(single-slot 3man_act
+;+		(comment "Instance of Person that is the 3 man.\ne.g.: In Act 5 Lime is The Third Man")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot actNum
+;+		(comment "The number of the act.\ne.g.: 0 (represents Act 0)")
+		(type INTEGER)
+		(range 0 5)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot relation_act
+;+		(comment "Chain of relations that appear during each act (multiple).\ne.g.: In act 0 Martins is friend of Lime")
+		(type INSTANCE)
+;+		(allowed-classes Relation)
+		(create-accessor read-write)))
+
+(defclass Event "This class represents the things that happened during the movie, which are, the Events."
+	(is-a USER)
+	(role abstract)
+	(single-slot descEvent
+;+		(comment "Brief description of the event")
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot consequence_of
+;+		(comment "Events that are the cause of this current event.\ne.g.: if we consider \"Martins arrives to Vienna\" is a consequence of the event \"Limes offers Martins a job\"")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+		(create-accessor read-write))
+	(multislot results
+;+		(comment "The chain of facts that are generated with the current event.\ne.g.: if we consider the event \"Martins meets Karl\" generates the fact that \"Karl is alive\"")
+		(type INSTANCE)
+;+		(allowed-classes Fact)
+		(create-accessor read-write))
+	(multislot cause_of
+;+		(comment "The events caused by the current event.\ne.g.: if we consider \"Martins arrives to Vienna\" causes the event \"Martins goes to meet Lime\"")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+		(create-accessor read-write))
+	(single-slot act_event
+;+		(comment "The act where this particular event happens (required single)\ne.g.: Lime dies in act 0")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Action "Events that are done by someone."
+	(is-a Event)
+	(role concrete)
+	(single-slot active
+;+		(comment "The person that actually does this action or the person that is the \"start\" point of a relation.\ne.g.: \n- \"Karl appears\" (Action)\n- \"Martins is friend of Lime (Relation, active: Martins)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass ActionTo "Is a type of action that affects another person.\ne.g.: Lime offers Martins a job"
+	(is-a Action)
+	(role concrete)
+	(multislot receiver
+;+		(comment "The person that \"receives\" the event.\ne.g.: \n- Martins meets Karl (ActionTo)\n- Martins receives a call (Incident)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
+
+(defclass Incident "Events whom just happen that could generate facts"
+	(is-a Event)
+	(role concrete)
+	(multislot receiver
+;+		(comment "The person that \"receives\" the event.\ne.g.: \n- Martins meets Karl (ActionTo)\n- Martins receives a call (Incident)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
+
+(defclass Fact "This class represents something that has really occurred or is actually the case, which are, the Facts."
+	(is-a USER)
+	(role abstract)
+	(multislot produced_by
+;+		(comment "The chain of events that generated this fact.")
+		(type INSTANCE)
+;+		(allowed-classes Event)
+		(create-accessor read-write))
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Relation "This class represents the idea of relation between two people as an unidirectional line."
+	(is-a Fact)
+	(role abstract)
+	(single-slot act_relation
+;+		(comment "The act where this particular relation happens.\ne.g.: Lime is friend of Martins in act 0")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot passive
+;+		(comment "The person that is the \"end\" point of the relation.\ne.g.: \"Martins is friend of Lime\" (passive: Lime)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot active
+;+		(comment "The person that actually did this action or the person that is the \"start\" point of a relation.\ne.g.: \n- \"Karl appears\" (Action)\n- \"Martins is friend of Lime (Relation, active: Martins)")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Friend_of "Kind  of relation that specifies friendship"
+	(is-a Relation)
+	(role concrete)
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+		(default "friend")
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Dislikes "Kind  of relation that specifies dislikes"
+	(is-a Relation)
+	(role concrete)
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+		(default " dislikes ")
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Loves "Kind of relation that specifies the first person is in love with the second"
+	(is-a Relation)
+	(role concrete)
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+		(default " loves ")
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Knows "Kind  of relation that specifies they know  the person but is neutral towards it"
+	(is-a Relation)
+	(role concrete)
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+		(default " knows ")
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Likes "Kind  of relation that specifies he likes how the other person is"
+	(is-a Relation)
+	(role concrete)
+	(single-slot desc_fact
+;+		(comment "Brief description of the fact.")
+		(type STRING)
+		(default " likes ")
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass PersonProperties "Class that represents facts that could or might change during the evolution of the history, such as: Person's Location, Nationality, Health Status or Who is The Third Man"
+	(is-a Fact)
+	(role abstract)
+	(single-slot act_properties_persons
+;+		(comment "The act where the fact is bounded, reflects the changes in the history.")
+		(type INSTANCE)
+;+		(allowed-classes Act)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass 3man "Concept of The Third Man"
+	(is-a PersonProperties)
+	(role concrete)
+	(single-slot person_3man
+;+		(comment "Instance of the person who is The Third Man")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Location "Concept of the Location."
+	(is-a PersonProperties)
+	(role concrete)
+	(multislot person_location
+;+		(comment "People whose location is the actual instance.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
+
+(defclass Nationality "Concept of Nationality."
+	(is-a PersonProperties)
+	(role concrete)
+	(multislot person_nationality
+;+		(comment "People whose location is the actual instance.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))
+
+(defclass Status "Concept of Health Status."
+	(is-a PersonProperties)
+	(role concrete)
+	(multislot person_status
+;+		(comment "People whose status is the actual instance.")
+		(type INSTANCE)
+;+		(allowed-classes Person)
+		(create-accessor read-write)))

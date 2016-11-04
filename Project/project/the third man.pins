@@ -1,0 +1,585 @@
+; Sun Oct 16 14:15:24 GMT+01:00 2016
+; 
+;+ (version "3.4.8")
+;+ (build "Build 629")
+
+([the+third+man_Class0] of  Person
+
+	(activity "none")
+	(gender "male")
+	(location_person [the+third+man_Class10016])
+	(name "Crabbin")
+	(nationality_person [the+third+man_Class30019])
+	(status_person [the+third+man_Class30020]))
+
+([the+third+man_Class1] of  Nationality
+
+	(act_properties_persons [the+third+man_Class7])
+	(desc_fact "american")
+	(person_nationality [the+third+man_Class10012]))
+
+([the+third+man_Class10002] of  Person
+
+	(activity "major")
+	(gender "male")
+	(location_person [the+third+man_Class10016])
+	(name "Calloway")
+	(nationality_person [the+third+man_Class30019])
+	(status_person [the+third+man_Class30020]))
+
+([the+third+man_Class10003] of  Status
+
+	(act_properties_persons [the+third+man_Class7])
+	(desc_fact "alive")
+	(person_status
+		[the+third+man_Class10008]
+		[the+third+man_Class10012])
+	(produced_by [the+third+man_Class30007]))
+
+([the+third+man_Class10008] of  Person
+
+	(activity "writer")
+	(gender "male")
+	(location_person
+		[the+third+man_Class10009]
+		[the+third+man_Class10016])
+	(name "Martins")
+	(status_person [the+third+man_Class10003]))
+
+([the+third+man_Class10009] of  Location
+
+	(act_properties_persons [the+third+man_Class7])
+	(desc_fact "usa")
+	(person_location [the+third+man_Class10008]))
+
+([the+third+man_Class10012] of  Person
+
+	(3man_person [the+third+man_Class30002])
+	(activity "unknown")
+	(gender "male")
+	(location_person
+		[the+third+man_Class10016]
+		[the+third+man_Class10013])
+	(name "Lime")
+	(nationality_person [the+third+man_Class1])
+	(status_person
+		[the+third+man_Class10028]
+		[the+third+man_Class10003]))
+
+([the+third+man_Class10013] of  Location
+
+	(act_properties_persons [the+third+man_Class7])
+	(desc_fact "vienna")
+	(person_location
+		[the+third+man_Class10020]
+		[the+third+man_Class10012])
+	(produced_by
+		[the+third+man_Class20002]
+		[the+third+man_Class30007]))
+
+([the+third+man_Class10016] of  Location
+
+	(act_properties_persons [the+third+man_Class22])
+	(desc_fact "vienna")
+	(person_location
+		[the+third+man_Class10008]
+		[the+third+man_Class0]
+		[the+third+man_Class10012]
+		[the+third+man_Class10002]
+		[the+third+man_Class40012]
+		[the+third+man_Class40019])
+	(produced_by
+		[the+third+man_Class30018]
+		[the+third+man_Class30030]
+		[the+third+man_Class30003]
+		[the+third+man_Class40011]))
+
+([the+third+man_Class10020] of  Person
+
+	(activity "janitor")
+	(gender "male")
+	(location_person [the+third+man_Class10013])
+	(name "Karl")
+	(nationality_person [the+third+man_Class2])
+	(status_person [the+third+man_Class10028]))
+
+([the+third+man_Class10028] of  Status
+
+	(act_properties_persons [the+third+man_Class22])
+	(desc_fact "dead")
+	(person_status
+		[the+third+man_Class10020]
+		[the+third+man_Class10012])
+	(produced_by [the+third+man_Class30012]))
+
+([the+third+man_Class2] of  Nationality
+
+	(act_properties_persons [the+third+man_Class7])
+	(desc_fact "austrian")
+	(person_nationality [the+third+man_Class10020])
+	(produced_by [the+third+man_Class30007]))
+
+([the+third+man_Class20002] of  Action
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(cause_of [the+third+man_Class20006])
+	(consequence_of [the+third+man_Class20003])
+	(descEvent "arrives to Vienna")
+	(results [the+third+man_Class10013]))
+
+([the+third+man_Class20003] of  ActionTo
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10012])
+	(cause_of [the+third+man_Class20002])
+	(descEvent "offers a job to")
+	(receiver [the+third+man_Class10008]))
+
+([the+third+man_Class20006] of  ActionTo
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(consequence_of [the+third+man_Class20002])
+	(descEvent "goes to meet")
+	(receiver [the+third+man_Class10012]))
+
+([the+third+man_Class20007] of  Nationality
+
+	(act_properties_persons [the+third+man_Class7])
+	(desc_fact "english"))
+
+([the+third+man_Class22] of  Act
+
+	(actNum 1)
+	(event_appears
+		[the+third+man_Class30017]
+		[the+third+man_Class30018]
+		[the+third+man_Class30021]
+		[the+third+man_Class30023]
+		[the+third+man_Class30024]
+		[the+third+man_Class30025]
+		[the+third+man_Class30028]
+		[the+third+man_Class30030]
+		[the+third+man_Class30029]
+		[the+third+man_Class30032]
+		[the+third+man_Class30033]
+		[the+third+man_Class30003]
+		[the+third+man_Class40007]
+		[the+third+man_Class40010]
+		[the+third+man_Class40011]
+		[the+third+man_Class40015])
+	(relation_act
+		[the+third+man_Class30027]
+		[the+third+man_Class30005]
+		[the+third+man_Class30006]
+		[the+third+man_Class40008]
+		[the+third+man_Class40009]
+		[the+third+man_Class40016]
+		[the+third+man_Class40017]))
+
+([the+third+man_Class23] of  Act
+
+	(actNum 2))
+
+([the+third+man_Class24] of  Act
+
+	(actNum 3))
+
+([the+third+man_Class25] of  Act
+
+	(actNum 4))
+
+([the+third+man_Class26] of  Act
+
+	(actNum 5)
+	(relation_act [the+third+man_Class40018]))
+
+([the+third+man_Class30002] of  3man
+
+	(act_properties_persons [the+third+man_Class26])
+	(desc_fact "is the 3man")
+	(person_3man [the+third+man_Class10012]))
+
+([the+third+man_Class30003] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class0])
+	(cause_of [the+third+man_Class40007])
+	(descEvent "appears")
+	(results
+		[the+third+man_Class10016]
+		[the+third+man_Class30019]
+		[the+third+man_Class30020]
+		[the+third+man_Class30005]
+		[the+third+man_Class30006]))
+
+([the+third+man_Class30005] of  Friend_of
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class30022])
+	(desc_fact "friend")
+	(passive [the+third+man_Class0])
+	(produced_by [the+third+man_Class30003]))
+
+([the+third+man_Class30006] of  Friend_of
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class0])
+	(desc_fact "friend")
+	(passive [the+third+man_Class30022])
+	(produced_by [the+third+man_Class30003]))
+
+([the+third+man_Class30007] of  Action
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10020])
+	(cause_of [the+third+man_Class30009])
+	(descEvent "appears")
+	(results
+		[the+third+man_Class2]
+		[the+third+man_Class10013]
+		[the+third+man_Class10003]))
+
+([the+third+man_Class30009] of  ActionTo
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(cause_of [the+third+man_Class30012])
+	(consequence_of [the+third+man_Class30007])
+	(descEvent "meets")
+	(receiver [the+third+man_Class10020])
+	(results
+		[the+third+man_Class30010]
+		[the+third+man_Class30011]))
+
+([the+third+man_Class30010] of  Knows
+
+	(act_relation [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(desc_fact " knows ")
+	(passive [the+third+man_Class10020])
+	(produced_by [the+third+man_Class30009]))
+
+([the+third+man_Class30011] of  Knows
+
+	(act_relation [the+third+man_Class7])
+	(active [the+third+man_Class10020])
+	(desc_fact " knows ")
+	(passive [the+third+man_Class10008])
+	(produced_by [the+third+man_Class30009]))
+
+([the+third+man_Class30012] of  Action
+
+	(act_event [the+third+man_Class7])
+	(active [the+third+man_Class10012])
+	(consequence_of [the+third+man_Class30009])
+	(descEvent "dies")
+	(results [the+third+man_Class10028]))
+
+([the+third+man_Class30014] of  Friend_of
+
+	(act_relation [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(desc_fact "friend")
+	(passive [the+third+man_Class10012]))
+
+([the+third+man_Class30015] of  Friend_of
+
+	(act_relation [the+third+man_Class7])
+	(active [the+third+man_Class10012])
+	(desc_fact "friend")
+	(passive [the+third+man_Class10008]))
+
+([the+third+man_Class30016] of  Likes
+
+	(act_relation [the+third+man_Class7])
+	(active [the+third+man_Class10008])
+	(desc_fact " likes ")
+	(passive [the+third+man_Class10020]))
+
+([the+third+man_Class30017] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(cause_of
+		[the+third+man_Class30018]
+		[the+third+man_Class30021])
+	(descEvent "goes to the funeral"))
+
+([the+third+man_Class30018] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10002])
+	(cause_of [the+third+man_Class30021])
+	(consequence_of [the+third+man_Class30017])
+	(descEvent "appears")
+	(results
+		[the+third+man_Class10016]
+		[the+third+man_Class30019]
+		[the+third+man_Class30020]))
+
+([the+third+man_Class30019] of  Nationality
+
+	(act_properties_persons [the+third+man_Class22])
+	(desc_fact "english")
+	(person_nationality
+		[the+third+man_Class0]
+		[the+third+man_Class10002])
+	(produced_by
+		[the+third+man_Class30018]
+		[the+third+man_Class30030]
+		[the+third+man_Class30003]))
+
+([the+third+man_Class30020] of  Status
+
+	(act_properties_persons [the+third+man_Class22])
+	(desc_fact "alive")
+	(person_status
+		[the+third+man_Class10002]
+		[the+third+man_Class0]
+		[the+third+man_Class40012])
+	(produced_by
+		[the+third+man_Class30018]
+		[the+third+man_Class30030]
+		[the+third+man_Class30003]
+		[the+third+man_Class40011]))
+
+([the+third+man_Class30021] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10002])
+	(cause_of [the+third+man_Class30023])
+	(consequence_of
+		[the+third+man_Class30018]
+		[the+third+man_Class30017])
+	(descEvent "follows")
+	(receiver [the+third+man_Class10008]))
+
+([the+third+man_Class30022] of  Person
+
+	(activity "sgt.")
+	(gender "man")
+	(name "Paine"))
+
+([the+third+man_Class30023] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10002])
+	(cause_of [the+third+man_Class30024])
+	(consequence_of [the+third+man_Class30021])
+	(descEvent "offers a drink to")
+	(receiver [the+third+man_Class10008]))
+
+([the+third+man_Class30024] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(cause_of [the+third+man_Class30025])
+	(consequence_of [the+third+man_Class30023])
+	(descEvent "gets drunk"))
+
+([the+third+man_Class30025] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(consequence_of [the+third+man_Class30024])
+	(descEvent "argue with")
+	(receiver [the+third+man_Class10002])
+	(results [the+third+man_Class30027]))
+
+([the+third+man_Class30027] of  Dislikes
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(desc_fact " dislikes ")
+	(passive [the+third+man_Class10002])
+	(produced_by [the+third+man_Class30025]))
+
+([the+third+man_Class30028] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(cause_of [the+third+man_Class30029])
+	(descEvent "tries to hit")
+	(receiver [the+third+man_Class10002]))
+
+([the+third+man_Class30029] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class30022])
+	(cause_of [the+third+man_Class30032])
+	(consequence_of
+		[the+third+man_Class30028]
+		[the+third+man_Class30030])
+	(descEvent "stops")
+	(receiver [the+third+man_Class10008]))
+
+([the+third+man_Class30030] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class30022])
+	(cause_of [the+third+man_Class30029])
+	(descEvent "appears")
+	(results
+		[the+third+man_Class30020]
+		[the+third+man_Class30019]
+		[the+third+man_Class10016]))
+
+([the+third+man_Class30032] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10002])
+	(cause_of [the+third+man_Class30033])
+	(consequence_of [the+third+man_Class30029])
+	(descEvent "helps")
+	(receiver [the+third+man_Class10008]))
+
+([the+third+man_Class30033] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(consequence_of
+		[the+third+man_Class30032]
+		[the+third+man_Class40010])
+	(descEvent "goes to the Military Hotel"))
+
+([the+third+man_Class40007] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class30022])
+	(consequence_of [the+third+man_Class30003])
+	(descEvent "introduces Martins to")
+	(receiver [the+third+man_Class0])
+	(results
+		[the+third+man_Class40008]
+		[the+third+man_Class40009]))
+
+([the+third+man_Class40008] of  Knows
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class0])
+	(desc_fact " knows ")
+	(passive [the+third+man_Class10008])
+	(produced_by [the+third+man_Class40007]))
+
+([the+third+man_Class40009] of  Knows
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(desc_fact " knows ")
+	(passive [the+third+man_Class0])
+	(produced_by [the+third+man_Class40007]))
+
+([the+third+man_Class40010] of  Incident
+
+	(act_event [the+third+man_Class22])
+	(cause_of [the+third+man_Class30033])
+	(consequence_of
+		[the+third+man_Class40011]
+		[the+third+man_Class40015])
+	(descEvent "receives a call")
+	(receiver [the+third+man_Class10008]))
+
+([the+third+man_Class40011] of  Action
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class40012])
+	(cause_of [the+third+man_Class40010])
+	(consequence_of [the+third+man_Class40015])
+	(descEvent "appears")
+	(results
+		[the+third+man_Class10016]
+		[the+third+man_Class40013]
+		[the+third+man_Class30020]))
+
+([the+third+man_Class40012] of  Person
+
+	(activity "Baron")
+	(gender "male")
+	(location_person [the+third+man_Class10016])
+	(name "Kurtz")
+	(nationality_person [the+third+man_Class40013])
+	(status_person [the+third+man_Class30020]))
+
+([the+third+man_Class40013] of  Nationality
+
+	(act_properties_persons [the+third+man_Class22])
+	(desc_fact "austrian")
+	(person_nationality [the+third+man_Class40012])
+	(produced_by [the+third+man_Class40011]))
+
+([the+third+man_Class40015] of  ActionTo
+
+	(act_event [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(cause_of
+		[the+third+man_Class40011]
+		[the+third+man_Class40010])
+	(descEvent "meets with")
+	(receiver [the+third+man_Class40012])
+	(results
+		[the+third+man_Class40016]
+		[the+third+man_Class40017]))
+
+([the+third+man_Class40016] of  Knows
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class10008])
+	(desc_fact " knows ")
+	(passive [the+third+man_Class40012])
+	(produced_by [the+third+man_Class40015]))
+
+([the+third+man_Class40017] of  Knows
+
+	(act_relation [the+third+man_Class22])
+	(active [the+third+man_Class40012])
+	(desc_fact " knows ")
+	(passive [the+third+man_Class10008])
+	(produced_by [the+third+man_Class40015]))
+
+([the+third+man_Class40018] of  Loves
+
+	(act_relation [the+third+man_Class26])
+	(active [the+third+man_Class10008])
+	(desc_fact " loves ")
+	(passive [the+third+man_Class40019]))
+
+([the+third+man_Class40019] of  Person
+
+	(activity "actress")
+	(gender "woman")
+	(location_person
+		[the+third+man_Class10016]
+		[the+third+man_Class40020])
+	(name "Anna")
+	(nationality_person [the+third+man_Class40021]))
+
+([the+third+man_Class40020] of  Location
+
+	(act_properties_persons [the+third+man_Class26])
+	(desc_fact "vienna")
+	(person_location [the+third+man_Class40019]))
+
+([the+third+man_Class40021] of  Nationality
+
+	(act_properties_persons [the+third+man_Class26])
+	(desc_fact "czechoslovak")
+	(person_nationality [the+third+man_Class40019]))
+
+([the+third+man_Class7] of  Act
+
+	(actNum 0)
+	(event_appears
+		[the+third+man_Class20003]
+		[the+third+man_Class20002]
+		[the+third+man_Class20006]
+		[the+third+man_Class30007]
+		[the+third+man_Class30009]
+		[the+third+man_Class30012])
+	(relation_act
+		[the+third+man_Class30010]
+		[the+third+man_Class30011]
+		[the+third+man_Class30014]
+		[the+third+man_Class30015]
+		[the+third+man_Class30016]))
